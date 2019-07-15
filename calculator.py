@@ -105,6 +105,20 @@ def subtract(*args):
 def Home():
   content = """
   <h1>Home</h1>
+  <body>
+  <br>Welcome to the WSGI Server Calculator.
+  <br>This Calculator will resovle the URL to perform a mathematical
+  operation and return the result to the screen. This is how you should
+  provide the Data:
+
+  <br>[function]/[first_operand]/[second_operand]
+  
+  <li>add: Adds Both of the Operands </li>
+  <li>Subtract: Subtracts the Second Provided Operand with the first</li>
+  <li>Multiply: Multiplies Both Operands</li>
+  <li>Divide: Divides the First Operand by the Second</li>
+  
+  </body>
   """
   return content
 # TODO: Add functions for handling more arithmetic operations.
