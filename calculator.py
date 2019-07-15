@@ -43,28 +43,63 @@ To submit your homework:
 
 
 def add(*args):
-  """ Returns a STRING with the sum of the arguments """  
+  """ Returns a STRING with the sum of the arguments """ 
+  sum = 0
+  for number in args:
+    sum += int(number) 
+  
   content = """
-  <h1>add</h1>
-  """
+  <h1>{}</h1>
+  """.format(sum)
   return content
   
 def multiply(*args):
+  product = 1
+
+  for number in args:
+    product *= int(number)
+  
   content = """
-  <h1>multiply</h1>
-  """
+  <h1>{}</h1>
+  """.format(product)
   return content
 
 def divide(*args):
+  # Take the arguments and place them into a list
+  numbers = []
+  for number in args:
+    numbers.append(int(number))
+  
+  # Try to divide them by one another
+  try:
+    quotient = numbers[0] / numbers[1]
+    content = """
+    <h1>{}</h1>
+    """.format(quotient)
+    return content
+  except ZeroDivisionError:
+    content = """
+    <h1>You Cannot Divide By Zero!</h1>
+    """
+    return content
+  
   content = """
-  <h1>divide</h1>
-  """
+  <h1>{}</h1>
+  """.format(quotient)
   return content
 
 def subtract(*args):
+  # Place the arguments into a list
+  numbers = []
+  for number in args:
+    numbers.append(int(number))
+
+  # Subtract the difference of the two numbers.
+  difference = numbers[0] - numbers[1]
+  
   content = """
-  <h1>subtract</h1>
-  """
+  <h1>{}</h1>
+  """.format(difference)
   return content
 
 def Home():
@@ -105,8 +140,6 @@ def resolve_path(path):
     # path.
     func = funcs[func_name]
     args = args
-    print(func)
-    print(args)
 
     return func, args
 
